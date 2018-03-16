@@ -23,26 +23,6 @@ button, strong {
 }
 
 
-
-/* APP BAR */
-
-/* #4 #sweat address both #app-bar s */
-h1 {
-    background-color: #3F51B5;
-    color: white;
-}
-
-
-/* CHANNELS LIST */
-
-/* #4 #sweat #channels */
-ul {
-    /* #3 #channels #list modifies h2 to ul */
-    background-color: white;
-    /* #3 #channels #bullets removed */
-    list-style-type: none;
-}
-
 li {
     /* #4 #channel #tile geometry */
     box-sizing: border-box;
@@ -72,6 +52,11 @@ li img {
     background-color: white;
     /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* #4 add styles to #tab-bar #buttons */
@@ -101,6 +86,16 @@ li img {
 
 /* MESSAGES */
 /* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
+
+#chat-scroll {
+    position: absolute;
+    width: 100%;
+    top: 64px;
+    bottom: 72px;
+    overflow-y: scroll;
+}
+
+
 .message {
     /* #3 #chat #width*/
     width: 80%;
@@ -110,11 +105,15 @@ li img {
 
     /* #4 #message distance to next message container*/
     margin-bottom: 8px;
+    position: relative;
 }
 
 
 .message h3 {
     font-size: medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .message h3 em {
@@ -136,6 +135,9 @@ li img {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
 }
 
 /* #4 left align own #messages using #margins */
@@ -143,3 +145,107 @@ li img {
     margin-left: 17.5%;
 }
 
+#chat-bar{
+    /* #3 #tab-bar #container should be white */
+    background-color: white;
+    /* #3 #tab-bar #container has all buttons centered */
+    text-align: center;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
+}
+
+
+/* split screen layout */
+
+#channels {
+    position: absolute;
+    left: 0;
+    width: 40%;
+    height: 100%;
+}
+
+
+#chat {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    
+}
+
+/* APP BAR */
+
+/* #4 #sweat address both #app-bar s */
+h1 {
+    background-color: #3F51B5;
+    color: white;
+    
+    height: 64px;
+    font-size: 20px;
+    font-weight: 500;
+    
+    box-sizing: border-box;
+    padding: 20px 16px 24px 16px;
+    
+    position: relative; 
+
+}
+
+h1#app-bar-left {
+    /* #5 LEFT-APP-BAR spacing */
+    padding-left: 72px;
+}
+
+
+/*MOOCUS*/
+#moocus{
+    position:absolute;
+    left: 16px;
+    bottom: 0;
+}
+
+/*Channel List*/
+
+ul {
+    /* #3 #channels #list modifies h2 to ul */
+    background-color: white;
+    /* #3 #channels #bullets removed */
+    list-style-type: none;
+    position: absolute;
+    width: 100%;
+    top: 64px;
+    bottom: 72px;
+    overflow-y: scroll;
+}
+
+.channel-meta {
+    
+    position:absolute;
+    right: 16px;
+}
+
+#emojis-button{
+	background-color: white;
+    border:none;
+    font-size: 13px;
+	
+}
+
+/*Emoji-Fenster*/
+#emojis{
+    position: absolute;
+    box-sizing: border-box;
+	background-color: white;
+	border:1px solid black;
+    height: 250px;
+    width: 250px;
+    left: 16px;
+    top: -284px;
+    padding: 16px;
+    text-align: left;
+    font-size: 28px;
+    overflow-y: auto;
+}
